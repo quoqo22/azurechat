@@ -78,6 +78,8 @@ jobs:
         with:
           inlineScript: |
             rg=$(az webapp list --query "[?name=='${{ secrets.AZURE_APP_SERVICE_NAME_STAGING }}'].resourceGroup" --output tsv)
+            echo The resource group is: $rg
+            echo The webapp name is: ${{ secrets.AZURE_APP_SERVICE_NAME_STAGING }}
             echo Setting SCM_DO_BUILD_DURING_DEPLOYMENT=false on app service ${{ secrets.AZURE_APP_SERVICE_NAME_STAGING }}
             az webapp config appsettings set -n ${{ secrets.AZURE_APP_SERVICE_NAME_STAGING }} -g $rg --settings SCM_DO_BUILD_DURING_DEPLOYMENT=false -o none
             echo Setting --startup-file=\"node server.js\" on app service ${{ secrets.AZURE_APP_SERVICE_NAME_STAGING }}
