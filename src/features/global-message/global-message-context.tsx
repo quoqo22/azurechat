@@ -1,23 +1,22 @@
+// global-message-context.tsx
+import { createContext, useContext } from "react";
 import { toast } from "@/components/ui/use-toast";
 import { ToastAction } from "@radix-ui/react-toast";
-import { createContext, useContext } from "react";
 
 interface GlobalMessageProps {
   showError: (error: string, reload?: () => void) => void;
   showSuccess: (message: MessageProp) => void;
 }
 
-const GlobalMessageContext = createContext<GlobalMessageProps | null>(null);
-
 interface MessageProp {
   title: string;
   description: string;
 }
 
-export const GlobalMessageProvider = ({
+const GlobalMessageContext = createContext<GlobalMessageProps | null>(null);
+
+export const GlobalMessageProvider: React.FC<{ children: React.ReactNode }> = ({
   children,
-}: {
-  children: React.ReactNode;
 }) => {
   const showError = (error: string, reload?: () => void) => {
     toast({
@@ -43,8 +42,8 @@ export const GlobalMessageProvider = ({
   return (
     <GlobalMessageContext.Provider
       value={{
-        showSuccess,
         showError,
+        showSuccess,
       }}
     >
       {children}
@@ -55,7 +54,7 @@ export const GlobalMessageProvider = ({
 export const useGlobalMessageContext = () => {
   const context = useContext(GlobalMessageContext);
   if (!context) {
-    throw new Error("GlobalErrorContext is null");
+    throw new Error("useGlobalMessageContext must be used within a GlobalMessageProvider");
   }
 
   return context;
