@@ -7,6 +7,8 @@ import { FileText, MessageCircle, Trash } from "lucide-react";
 import { useParams, useRouter } from "next/navigation";
 import { FC } from "react";
 import { ChatThreadModel } from "../chat-services/models";
+;
+
 
 interface Prop {
   menuItems: Array<ChatThreadModel>;

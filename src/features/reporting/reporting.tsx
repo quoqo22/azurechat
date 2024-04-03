@@ -69,7 +69,7 @@ export const Reporting = async (props: ReportingProp) => {
                   ))}
               </TableBody>
             </Table>
-            <div className="flex gap-2 p-2 justify-end">
+          <div className="flex gap-2 p-2 justify-end">
               {previousPage >= 0 && (
                 <Button asChild size={"icon"} variant={"outline"}>
                   <Link
