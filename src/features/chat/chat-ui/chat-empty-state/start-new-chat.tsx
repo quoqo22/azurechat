@@ -18,7 +18,7 @@ export const StartNewChat: FC<Prop> = (props) => {
         </Typography>
         <div className="flex flex-col gap-2">
           <p className="">
-          Q-Bot is a cutting-edge AI solution that is revolutionizing how enterprises access and utilize their data.
+            Q-Bot is a cutting-edge AI solution that is revolutionizing how enterprises access and utilize their data.
           </p>
           <p>You can start a new chat with me by clicking the button below.</p>
         </div>
