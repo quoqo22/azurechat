@@ -1,6 +1,3 @@
-# Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
-# More GitHub Actions for Azure: https://github.com/Azure/actions
-
 name: Build and deploy Node.js app to Azure Web App - azchat-webapp-zkfxedppslmoe
 
 on:
@@ -9,12 +6,14 @@ on:
       - staging_latest
   workflow_dispatch:
 
+
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - name: 🌱 Checkout to the branch
+        uses: actions/checkout@v3
 
       - name: Set up Node.js version
         uses: actions/setup-node@v3
@@ -59,7 +58,6 @@ jobs:
     needs: build
     environment:
       name: 'staging'
-      url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
     
     steps:
       - name: ⬇️ Download artifact from build job
@@ -90,3 +88,7 @@ jobs:
         with:
           app-name: ${{ secrets.AZURE_APP_SERVICE_NAME }}
           slot-name: ${{ secrets.AZURE_APP_SERVICE_SLOT_NAME }}
+          package: ${{ github.workspace }}/Nextjs-site.zip
+
+      - name: 🧹 Cleanup
+        run: rm ${{ github.workspace }}/Nextjs-site.zip
