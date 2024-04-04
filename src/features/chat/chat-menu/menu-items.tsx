@@ -49,7 +49,7 @@ export const MenuItems: FC<Prop> = (props) => {
             />
           )}
 
-          <span className="flex gap-2 items-center overflow-hidden flex-1">
+          <span className="flex gap-2 items-center overflow-hidden flex-1 hover:bg-gray-200">
             <span className="overflow-ellipsis truncate"> {thread.name}</span>
           </span>
           <Button

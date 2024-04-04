@@ -9,7 +9,7 @@ import {
   Triangle,
 } from "lucide-react";
 import Link from "next/link";
-import { ThemeToggle } from "../theme/theme-toggle";
+// import { ThemeToggle } from "../theme/theme-toggle";
 import { UserProfile } from "../user-profile";
 
 import { useSession } from "next-auth/react";
@@ -35,7 +35,7 @@ export const MainMenu = () => {
           variant={"outline"}
         >
           <Link href="/" title="Home">
-            <img src="/ai-icon.png" />
+            <img src="/ai-icon.png" className="w-180 h-180" />
           </Link>
         </Button>
         <Button
@@ -72,7 +72,7 @@ export const MainMenu = () => {
         </Button>
       </div>
       <div className="flex flex-col gap-2 items-center">
-        <ThemeToggle />
+        {/* <ThemeToggle /> */}
         <UserProfile />
       </div>
     </div>
