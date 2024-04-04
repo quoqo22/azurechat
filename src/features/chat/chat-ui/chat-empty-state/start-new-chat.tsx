@@ -10,7 +10,7 @@ export const StartNewChat: FC<Prop> = (props) => {
   return (
     <div className="grid grid-cols-5 w-full items-center container mx-auto max-w-3xl justify-center h-full gap-9">
       <div className="col-span-2 gap-5 flex flex-col flex-1">
-        <img src="/ai-icon.png" className="w-36" />
+          <img src="/ai-icon.png" className="w-601 h-601" />
       </div>
       <Card className="col-span-3 flex flex-col gap-5 p-5 ">
         <Typography variant="h4" className="text-primary">
@@ -18,9 +18,7 @@ export const StartNewChat: FC<Prop> = (props) => {
         </Typography>
         <div className="flex flex-col gap-2">
           <p className="">
-            Welcome to {AI_NAME}. You should interact in a friendly manner with
-            the AI assistant and refrain from participating in any harmful
-            activities.
+            Q-Bot is a cutting-edge AI solution that is revolutionizing how enterprises access and utilize their data.
           </p>
           <p>You can start a new chat with me by clicking the button below.</p>
         </div>
