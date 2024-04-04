@@ -17,7 +17,7 @@ export const ChatReportingUI: FC<Props> = async (props) => {
     <Card className="h-full relative">
       <div className="h-full rounded-md overflow-y-auto">
         <div className="flex justify-center p-4"></div>
-        <div className=" pb-[80px] ">
+        <div className=" pb-[100px] ">
           {chats.map((message, index) => (
             <ChatRow
               name={message.role === "user" ? chatThread.useName : AI_NAME}
