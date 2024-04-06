@@ -7,7 +7,12 @@ import { initAndGuardChatSession } from "./chat-thread-service";
 import { CosmosDBChatMessageHistory } from "./cosmosdb/cosmosdb";
 import { PromptGPTProps } from "./models";
 
-const SYSTEM_PROMPT = `You are ${AI_NAME} who is a helpful AI Assistant.`;
+// const SYSTEM_PROMPT = `You are ${AI_NAME} who is a helpful AI Assistant.`;
+const SYSTEM_PROMPT = `You are a helpful legal assistant that helps users with legal drafting,giving legal recommendations,analysing legal documents etc.
+                        Answer to the point. Don't give any untruthful answers.
+                        Do not give any disclaimers or Note in the response.
+                        Do not respond to anything other than questions from legal domain.
+                        pushback the queries other than legal domain if asked`;
 
 const CONTEXT_PROMPT = ({
   context,

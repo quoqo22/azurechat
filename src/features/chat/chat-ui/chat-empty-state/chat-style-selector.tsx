@@ -18,7 +18,7 @@ export const ChatStyleSelector: FC<Prop> = (props) => {
         onConversationStyleChange(value as ConversationStyle)
       }
     >
-      <TabsList className="grid w-full grid-cols-3 h-12 items-stretch">
+      {/* <TabsList className="grid w-full grid-cols-3 h-12 items-stretch">
         <TabsTrigger
           value="creative"
           className="flex gap-2"
@@ -40,7 +40,7 @@ export const ChatStyleSelector: FC<Prop> = (props) => {
         >
           <CircleDot size={20} /> Precise
         </TabsTrigger>
-      </TabsList>
+      </TabsList> */}
     </Tabs>
   );
 };
