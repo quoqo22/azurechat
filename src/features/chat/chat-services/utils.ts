@@ -25,7 +25,7 @@ export const transformConversationStyleToTemperature = (
     case "creative":
       return 1;
     default:
-      return 0.1;
+      return 0.2;
   }
 };
 
